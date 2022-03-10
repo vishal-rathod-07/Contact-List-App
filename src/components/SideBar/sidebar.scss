@@ -1,0 +1,35 @@
+.sidebar {
+  width: 70px;
+  background: linear-gradient(to bottom, #fd8a6a 0%, #fc67a5 100%);
+  color: #fff;
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  .sidebar__icon {
+    height: 30px;
+    width: 30px;
+    margin: auto;
+  }
+
+  .sidebar__header-logo {
+    width: 2rem;
+    margin: 10px auto 10px;
+  }
+}
+
+.nav-link {
+  border-radius: 0px !important;
+  transition: all 0.5s;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.active {
+  border-left: 5px solid white !important;
+  background-color: inherit !important;
+}
+
+.nav-link:hover {
+  background-color: #52525240 !important;
+  color: #fff;
+}
