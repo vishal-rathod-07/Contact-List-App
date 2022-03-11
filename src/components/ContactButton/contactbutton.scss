@@ -1,0 +1,15 @@
+.contact-btn {
+  background: linear-gradient(45deg, #ff8767, #fe67a3);
+  box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+  color: white;
+
+  .edit-icon {
+    height: 20px !important;
+    width: 20px !important;
+    margin-right: 5px;
+  }
+
+  &:hover {
+    color: white;
+  }
+}
