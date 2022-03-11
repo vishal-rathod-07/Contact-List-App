@@ -11,7 +11,7 @@ import "./sidebar.scss";
 
 const SideBar = () => {
   return (
-    <div className='sidebar d-flex flex-column flex-shrink-0 bg-light vh-100'>
+    <div className='sidebar d-flex flex-column flex-shrink-0 bg-light'>
       <div className='sidebar__header-logo'>
         <MenuAlt2Icon className=' sidebar__icon' />
       </div>
