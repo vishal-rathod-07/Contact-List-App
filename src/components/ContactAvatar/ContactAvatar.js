@@ -1,5 +1,5 @@
-import * as React from "react";
-import Avatar from "@mui/material/Avatar";
+import * as React from 'react';
+import Avatar from '@mui/material/Avatar';
 
 function stringToColor(string) {
   let hash = 0;
@@ -10,7 +10,7 @@ function stringToColor(string) {
     hash = string.charCodeAt(i) + ((hash << 5) - hash);
   }
 
-  let color = "#";
+  let color = '#';
 
   for (i = 0; i < 3; i += 1) {
     const value = (hash >> (i * 8)) & 0xff;
@@ -26,7 +26,7 @@ function stringAvatar(name) {
     sx: {
       bgcolor: stringToColor(name),
     },
-    children: `${name.split(" ")[0][0]}${name.split(" ")[1][0]}`,
+    children: `${name.split(' ')[0][0]}${name.split(' ')[1][0]}`,
   };
 }
 

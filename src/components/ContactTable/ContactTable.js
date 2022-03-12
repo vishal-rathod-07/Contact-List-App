@@ -1,7 +1,7 @@
-import { Table } from "react-bootstrap";
-import ContactRow from "../ContactRow/ContactRow";
+import { Table } from 'react-bootstrap';
+import ContactRow from '../ContactRow/ContactRow';
 
-import "./contacttable.scss";
+import './contacttable.scss';
 
 const ContactTable = ({
   contacts,

@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { Modal } from "react-bootstrap";
-import { Button } from "react-bootstrap";
+import { useEffect, useState } from 'react';
+import { Modal } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 function ContactModel({
   activeContact,
@@ -13,12 +13,12 @@ function ContactModel({
 }) {
   const [contact, setContact] = useState({
     id: Date.now(),
-    fname: "",
-    email: "",
-    phone: "",
-    company: "",
-    Role: "",
-    address: "",
+    fname: '',
+    email: '',
+    phone: '',
+    company: '',
+    Role: '',
+    address: '',
   });
 
   useEffect(() => {
@@ -26,21 +26,21 @@ function ContactModel({
       ? setContact(activeContact)
       : setContact({
           id: Date.now(),
-          fname: "",
-          email: "",
-          phone: "",
-          company: "",
-          Role: "",
-          address: "",
+          fname: '',
+          email: '',
+          phone: '',
+          company: '',
+          Role: '',
+          address: '',
         });
   }, [activeContact, isEdit]);
 
-  console.log("isEdit: ", isEdit);
+  console.log('isEdit: ', isEdit);
 
-  console.log("activeContact");
+  console.log('activeContact');
   isEdit && console.log(activeContact);
 
-  console.log("contact");
+  console.log('contact');
   console.log(contact);
 
   const handleSubmit = (e) => {
@@ -48,12 +48,12 @@ function ContactModel({
     isEdit ? editContact(contact) : addContact(contact);
     // addContact(contact);
     setContact({
-      fname: "",
-      email: "",
-      phone: "",
-      company: "",
-      Role: "",
-      address: "",
+      fname: '',
+      email: '',
+      phone: '',
+      company: '',
+      Role: '',
+      address: '',
     });
     onHide(false);
   };

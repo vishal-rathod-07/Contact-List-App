@@ -1,10 +1,10 @@
-import React from "react";
-import { Button } from "react-bootstrap";
+import React from 'react';
+import { Button } from 'react-bootstrap';
 // import ContactModel from "../ContactModel/ContactModel";
-import { PencilIcon } from "@heroicons/react/outline";
-import { PlusIcon } from "@heroicons/react/outline";
+import { PencilIcon } from '@heroicons/react/outline';
+import { PlusIcon } from '@heroicons/react/outline';
 
-import "./contactbutton.scss";
+import './contactbutton.scss';
 
 const ContactButton = ({
   btnIcon,
@@ -22,14 +22,14 @@ const ContactButton = ({
         variant='default'
         onClick={() => {
           setModalShow(true);
-          btnType === "add" ? setIsEdit(false) : setIsEdit(true);
+          btnType === 'add' ? setIsEdit(false) : setIsEdit(true);
         }}
         // onClick={setIsEdit(isEdit)}
         className='contact-btn'
       >
-        {btnIcon === "pencil" ? (
+        {btnIcon === 'pencil' ? (
           <PencilIcon className='edit-icon align-middle' />
-        ) : btnIcon === "plus" ? (
+        ) : btnIcon === 'plus' ? (
           <PlusIcon className='edit-icon align-middle' />
         ) : null}
         {btnText}
