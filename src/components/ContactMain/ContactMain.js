@@ -68,7 +68,7 @@ const ContactMain = () => {
   return (
     <div className='main-content container-fluid'>
       <div className='row'>
-        <div className='main-content-top col-md-12'></div>
+        <div className='main-content-top col-xl-12'></div>
       </div>
       <div className='row'>
         <div
@@ -76,24 +76,22 @@ const ContactMain = () => {
           style={{ width: '93%', height: '100%' }}
         >
           <div className='row'>
-            <div className='col-md-1 p-0'>
+            <div className='col-xl-12 d-flex'>
               <img src={Logo} alt='logo' className='logo' />
-            </div>
-            <div className='col-md-11'>
               <div className='main-content-header'>
                 <h3>Contacts</h3>
                 <p>Welcome to FlatCRM Contact page</p>
               </div>
             </div>
           </div>
-          <div className='row mt-4'>
-            <div className='col-md-3 d-flex'>
+          <div className='row mt-4 mb-4'>
+            <div className='col-xl-3 col-md-6'>
               <SearchBar
                 filterText={filterText}
                 setFilterText={setFilterText}
               />
             </div>
-            <div className='col-md-9 d-flex align-center'>
+            <div className='col-xl-9 col-md-6 d-flex'>
               <ContactButton
                 btnIcon={'plus'}
                 btnText={'Add Contact'}
@@ -103,8 +101,8 @@ const ContactMain = () => {
               />
             </div>
           </div>
-          <div className='row mt-5'>
-            <div className='col-md-7 '>
+          <div className='row mt-0'>
+            <div className='col-lg-7 '>
               <ContactTable
                 contacts={contacts}
                 deleteContact={deleteContact}
@@ -112,7 +110,7 @@ const ContactMain = () => {
                 showActiveUser={showActiveUser}
               />
             </div>
-            <div className='col-md-5'>
+            <div className='col-lg-5'>
               {isActive && (
                 <ContactInfo
                   activeContact={activeContact}
