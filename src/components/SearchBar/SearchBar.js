@@ -1,6 +1,6 @@
-import { SearchIcon } from "@heroicons/react/outline";
+import { SearchIcon } from '@heroicons/react/outline';
 
-import "./searchbar.scss";
+import './searchbar.scss';
 
 const SearchBar = ({ filterText, setFilterText }) => {
   const handleSearchInputText = (e) => {

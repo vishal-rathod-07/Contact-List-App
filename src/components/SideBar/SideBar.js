@@ -1,13 +1,13 @@
-import { CogIcon } from "@heroicons/react/outline";
-import { MenuAlt2Icon } from "@heroicons/react/outline";
-import { UserIcon } from "@heroicons/react/outline";
-import { ClipboardListIcon } from "@heroicons/react/outline";
-import { ChartPieIcon } from "@heroicons/react/outline";
-import { DatabaseIcon } from "@heroicons/react/outline";
-import { CalendarIcon } from "@heroicons/react/outline";
-import { HomeIcon } from "@heroicons/react/outline";
+import { CogIcon } from '@heroicons/react/outline';
+import { MenuAlt2Icon } from '@heroicons/react/outline';
+import { UserIcon } from '@heroicons/react/outline';
+import { ClipboardListIcon } from '@heroicons/react/outline';
+import { ChartPieIcon } from '@heroicons/react/outline';
+import { DatabaseIcon } from '@heroicons/react/outline';
+import { CalendarIcon } from '@heroicons/react/outline';
+import { HomeIcon } from '@heroicons/react/outline';
 
-import "./sidebar.scss";
+import './sidebar.scss';
 
 const SideBar = () => {
   return (

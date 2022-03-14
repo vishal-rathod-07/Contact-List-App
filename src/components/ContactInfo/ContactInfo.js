@@ -1,8 +1,8 @@
-import ContactAvatar from "../ContactAvatar/ContactAvatar";
-import ContactButton from "../ContactButton/ContactButton";
-import { useEffect, useState } from "react";
+import ContactAvatar from '../ContactAvatar/ContactAvatar';
+import ContactButton from '../ContactButton/ContactButton';
+import { useEffect, useState } from 'react';
 
-import "./contactinfo.scss";
+import './contactinfo.scss';
 
 const ContactInfo = (props) => {
   const { id, fname, email, phone, company, Role, address } =
@@ -35,7 +35,7 @@ const ContactInfo = (props) => {
       <div
         className='container'
         style={{
-          width: "100%",
+          width: '100%',
         }}
       >
         <div className='row'>
@@ -44,13 +44,13 @@ const ContactInfo = (props) => {
               <div
                 className='card-body'
                 style={{
-                  padding: "1.5rem 4rem",
+                  padding: '1.5rem 4rem',
                 }}
               >
                 <div className='d-flex flex-column align-items-center text-center'>
                   <ContactAvatar
                     name={contact.fname}
-                    className={"info-avatar"}
+                    className={'info-avatar'}
                   />
                   <div className='mt-3'>
                     <h4>{contact.fname}</h4>
@@ -98,8 +98,8 @@ const ContactInfo = (props) => {
                   <div className='col-sm-12 text-center'>
                     {/* <EditContact /> */}
                     <ContactButton
-                      btnIcon={"pencil"}
-                      btnText={"Edit Contact"}
+                      btnIcon={'pencil'}
+                      btnText={'Edit Contact'}
                       setModalShow={props.setModalShow}
                       setIsEdit={props.setIsEdit}
                     />

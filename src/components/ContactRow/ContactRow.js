@@ -1,7 +1,7 @@
-import ContactAvatar from "../ContactAvatar/ContactAvatar";
-import { TrashIcon } from "@heroicons/react/outline";
+import ContactAvatar from '../ContactAvatar/ContactAvatar';
+import { TrashIcon } from '@heroicons/react/outline';
 
-import "./contactrow.scss";
+import './contactrow.scss';
 
 const ContactRow = ({ contact, deleteContact, showActiveUser }) => {
   return (

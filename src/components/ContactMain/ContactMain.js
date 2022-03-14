@@ -1,37 +1,37 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import SearchBar from "../SearchBar/SearchBar";
-import ContactTable from "../ContactTable/ContactTable";
-import ContactInfo from "../ContactInfo/ContactInfo";
-import ContactButton from "../ContactButton/ContactButton";
-import ContactModel from "../ContactModel/ContactModel";
+import SearchBar from '../SearchBar/SearchBar';
+import ContactTable from '../ContactTable/ContactTable';
+import ContactInfo from '../ContactInfo/ContactInfo';
+import ContactButton from '../ContactButton/ContactButton';
+import ContactModel from '../ContactModel/ContactModel';
 
-import Logo from "../../contact-list.png";
+import Logo from '../../contact-list.png';
 
-import "./contactmain.scss";
+import './contactmain.scss';
 
 const ContactMain = () => {
   const [contacts, setContacts] = useState(
-    localStorage.getItem("contacts")
-      ? JSON.parse(localStorage.getItem("contacts"))
+    localStorage.getItem('contacts')
+      ? JSON.parse(localStorage.getItem('contacts'))
       : [
           {
             id: Date.now(),
-            fname: "Mike Huston",
-            email: "mikehuston@live.com",
-            phone: "(239) 816-9029",
-            company: "Alibaba Traders .co",
-            Role: "Chief Operating Officer",
-            address: "Bay Area, San Francisco, CA",
+            fname: 'Mike Huston',
+            email: 'mikehuston@live.com',
+            phone: '(239) 816-9029',
+            company: 'Alibaba Traders .co',
+            Role: 'Chief Operating Officer',
+            address: 'Bay Area, San Francisco, CA',
           },
         ]
   );
 
   useEffect(() => {
-    localStorage.setItem("contacts", JSON.stringify(contacts));
+    localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
-  const [filterText, setFilterText] = useState("");
+  const [filterText, setFilterText] = useState('');
 
   const [activeContact, setActiveContact] = useState(null);
   const [isActive, setIsActive] = useState(false);
@@ -72,7 +72,7 @@ const ContactMain = () => {
       <div className='row'>
         <div
           className='main-content-bottom container-fluid mt-5'
-          style={{ width: "93%", height: "100%" }}
+          style={{ width: '93%', height: '100%' }}
         >
           <div className='row'>
             <div className='col-md-1 p-0'>
@@ -94,9 +94,9 @@ const ContactMain = () => {
             </div>
             <div className='col-md-9 d-flex align-center'>
               <ContactButton
-                btnIcon={"plus"}
-                btnText={"Add Contact"}
-                btnType={"add"}
+                btnIcon={'plus'}
+                btnText={'Add Contact'}
+                btnType={'add'}
                 setModalShow={setModalShow}
                 setIsEdit={setIsEdit}
               />
@@ -125,7 +125,7 @@ const ContactMain = () => {
               isEdit={isEdit}
               show={modalShow}
               onHide={() => setModalShow(false)}
-              title={isEdit ? "Edit Contact" : "Add Contact"}
+              title={isEdit ? 'Edit Contact' : 'Add Contact'}
               addContact={addContact}
               editContact={editContact}
             />
