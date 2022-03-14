@@ -6,10 +6,7 @@ import './contactrow.scss';
 const ContactRow = ({ contact, deleteContact, showActiveUser }) => {
   return (
     <tr key={contact.id}>
-      <td
-        className='align-middle text-center'
-        onClick={() => showActiveUser(contact.id)}
-      >
+      <td className='align-middle text-center'>
         <input type='checkbox' />
       </td>
       <td onClick={() => showActiveUser(contact.id)}>
