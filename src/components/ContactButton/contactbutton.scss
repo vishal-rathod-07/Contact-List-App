@@ -3,6 +3,11 @@
   box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
   color: white;
 
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    margin-top: 20px;
+  }
+
   .edit-icon {
     height: 20px !important;
     width: 20px !important;
