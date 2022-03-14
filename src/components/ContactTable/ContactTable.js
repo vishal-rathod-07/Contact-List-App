@@ -22,8 +22,29 @@ const ContactTable = ({
         </thead>
         <tbody>
           {contacts
-            .filter((contact) =>
-              contact.fname.toLowerCase().includes(filterText.toLowerCase())
+            .filter(
+              (contact) =>
+                contact.fname
+                  .toLowerCase()
+                  .includes(filterText.toLowerCase()) ||
+                contact.lname
+                  .toLowerCase()
+                  .includes(filterText.toLowerCase()) ||
+                (
+                  contact.fname.toLowerCase() +
+                  ' ' +
+                  contact.lname.toLowerCase()
+                ).includes(filterText.toLowerCase()) ||
+                contact.company
+                  .toLowerCase()
+                  .includes(filterText.toLowerCase()) ||
+                contact.email
+                  .toLowerCase()
+                  .includes(filterText.toLowerCase()) ||
+                contact.phone
+                  .toLowerCase()
+                  .includes(filterText.toLowerCase()) ||
+                contact.Role.toLowerCase().includes(filterText.toLowerCase())
             )
             .map((contact) => (
               <ContactRow

@@ -5,12 +5,13 @@ import { useEffect, useState } from 'react';
 import './contactinfo.scss';
 
 const ContactInfo = (props) => {
-  const { id, fname, email, phone, company, Role, address } =
+  const { id, fname, lname, email, phone, company, Role, address } =
     props.activeContact;
 
   const [contact, setContact] = useState({
     id: id,
     fname: fname,
+    lname: lname,
     email: email,
     phone: phone,
     company: company,
@@ -22,13 +23,14 @@ const ContactInfo = (props) => {
     setContact({
       id: id,
       fname: fname,
+      lname: lname,
       email: email,
       phone: phone,
       company: company,
       Role: Role,
       address: address,
     });
-  }, [id, fname, email, phone, company, Role, address]);
+  }, [id, fname, lname, email, phone, company, Role, address]);
 
   return (
     <div className='main-content-card'>
@@ -49,11 +51,11 @@ const ContactInfo = (props) => {
               >
                 <div className='d-flex flex-column align-items-center text-center'>
                   <ContactAvatar
-                    name={contact.fname}
+                    name={contact.fname + ' ' + contact.lname}
                     className={'info-avatar'}
                   />
                   <div className='mt-3'>
-                    <h4>{contact.fname}</h4>
+                    <h4>{contact.fname + ' ' + contact.lname}</h4>
                     <p className='mb-1 text-secondary'>
                       {contact.Role} @ {contact.company}
                     </p>
@@ -63,7 +65,9 @@ const ContactInfo = (props) => {
                   <div className='col-sm-4'>
                     <h6 className=' mb-0 text-secondary'>Full Name</h6>
                   </div>
-                  <div className='col-sm-8  '>{contact.fname}</div>
+                  <div className='col-sm-8  '>
+                    {contact.fname} {contact.lname}
+                  </div>
                 </div>
                 <hr />
                 <div className='row'>

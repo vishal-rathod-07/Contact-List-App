@@ -17,9 +17,10 @@ const ContactMain = () => {
       : [
           {
             id: Date.now(),
-            fname: 'Mike Huston',
+            fname: 'Mike',
+            lname: 'Huston',
             email: 'mikehuston@live.com',
-            phone: '(239) 816-9029',
+            phone: '8996652389',
             company: 'Alibaba Traders .co',
             Role: 'Chief Operating Officer',
             address: 'Bay Area, San Francisco, CA',

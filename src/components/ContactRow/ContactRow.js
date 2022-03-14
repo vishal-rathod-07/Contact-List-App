@@ -15,11 +15,16 @@ const ContactRow = ({ contact, deleteContact, showActiveUser }) => {
       <td onClick={() => showActiveUser(contact.id)}>
         <div className='contact d-flex'>
           <div className='contact-avatar m-2'>
-            <ContactAvatar name={contact.fname} className='list-avatar' />
+            <ContactAvatar
+              name={contact.fname + ' ' + contact.lname}
+              className='list-avatar'
+            />
           </div>
           <div className='contact-info d-flex flex-column justify-content-center m-2'>
             <div className='contact-info-name'>
-              <p className='m-0'>{contact.fname}</p>
+              <p className='m-0'>
+                {contact.fname} {contact.lname}
+              </p>
             </div>
             <div className='contact-info-email'>
               <p className='m-0'>
