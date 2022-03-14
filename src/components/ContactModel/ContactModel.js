@@ -177,7 +177,7 @@ function ContactModel({
                 }
                 required
               >
-                <option selected disabled value=''>
+                <option disabled value=''>
                   Select Your Role...
                 </option>
                 <option value='Chief Executive Officer'>
