@@ -8,3 +8,24 @@
   border-radius: 40px;
   background-color: #eeecec;
 }
+
+.serch-icon {
+  background-color: var(--header-brand-color);
+  border-radius: 50%;
+  color: #7c797a;
+  padding: 5px;
+  height: 32px;
+  width: 32px;
+  margin: 7px 7px 7px 0;
+}
+
+.search-input {
+  background-color: #eeecec;
+  color: #7c797a;
+  width: 100%;
+  border: none;
+}
+
+.search-input:focus {
+  outline: none;
+}
