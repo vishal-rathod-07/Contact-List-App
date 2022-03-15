@@ -3,11 +3,28 @@ import { TrashIcon } from '@heroicons/react/outline';
 
 import './contactrow.scss';
 
-const ContactRow = ({ contact, deleteContact, showActiveUser }) => {
+const ContactRow = ({
+  contact,
+  deleteContact,
+  showActiveUser,
+  checkedContactIdList,
+  setCheckedContactIDList,
+}) => {
   return (
     <tr key={contact.id}>
       <td className='align-middle text-center'>
-        <input type='checkbox' />
+        <input
+          type='checkbox'
+          onChange={() => {
+            if (checkedContactIdList.includes(contact.id)) {
+              setCheckedContactIDList(
+                checkedContactIdList.filter((item) => item !== contact.id)
+              );
+            } else {
+              setCheckedContactIDList([...checkedContactIdList, contact.id]);
+            }
+          }}
+        />
       </td>
       <td onClick={() => showActiveUser(contact.id)}>
         <div className='contact d-flex'>
