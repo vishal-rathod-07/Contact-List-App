@@ -5,10 +5,12 @@ import ContactTable from '../ContactTable/ContactTable';
 import ContactInfo from '../ContactInfo/ContactInfo';
 import ContactButton from '../ContactButton/ContactButton';
 import ContactModel from '../ContactModel/ContactModel';
+import DeleteModel from '../DeleteModel/DeleteModel';
 
 import Logo from '../../contact-list.png';
 
 import './contactmain.scss';
+import { Button } from 'react-bootstrap';
 
 const ContactMain = () => {
   const [contacts, setContacts] = useState(
@@ -44,6 +46,22 @@ const ContactMain = () => {
 
   const [checkedContactIdList, setCheckedContactIDList] = useState([]);
 
+  const [isMultiDelete, setIsMultiDelete] = useState(false);
+  const [deleteContactId, setDeleteContactId] = useState(null);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const handleDelete = () => {
+    if (isMultiDelete) {
+      deleteCheckedContacts(checkedContactIdList);
+    } else {
+      deleteContact(deleteContactId);
+    }
+    handleClose();
+  };
+
   const addContact = (contact) => {
     setContacts([...contacts, contact]);
   };
@@ -54,6 +72,11 @@ const ContactMain = () => {
     if (activeContact && activeContact.id === id) {
       setActiveContact(null);
       setIsActive(false);
+    }
+    if (checkedContactIdList.includes(id)) {
+      setCheckedContactIDList(
+        checkedContactIdList.filter((contactId) => contactId !== id)
+      );
     }
   };
 
@@ -108,7 +131,7 @@ const ContactMain = () => {
                 setFilterText={setFilterText}
               />
             </div>
-            <div className='col-xl-9 col-md-6 d-flex'>
+            <div className='col-xl-2 col-md-3 d-flex'>
               <ContactButton
                 btnIcon={'plus'}
                 btnText={'Add Contact'}
@@ -117,17 +140,34 @@ const ContactMain = () => {
                 setIsEdit={setIsEdit}
               />
             </div>
+            <div className='col-xl-7 col-md-3 d-flex'>
+              {checkedContactIdList.length > 0 ? (
+                <Button
+                  title={`Delete ${checkedContactIdList.length} contact(s)`}
+                  className='custom-btn'
+                  onClick={() => {
+                    handleShow();
+                    setIsMultiDelete(true);
+                  }}
+                >
+                  Delete
+                </Button>
+              ) : (
+                ''
+              )}
+            </div>
           </div>
           <div className='row p-lg-5 pb-lg-0 pt-lg-0'>
             <div className='col-lg-7 '>
               <ContactTable
                 contacts={contacts}
-                deleteContact={deleteContact}
                 filterText={filterText}
                 showActiveUser={showActiveUser}
-                deleteCheckedContacts={deleteCheckedContacts}
                 checkedContactIdList={checkedContactIdList}
                 setCheckedContactIDList={setCheckedContactIDList}
+                handleShow={handleShow}
+                setIsMultiDelete={setIsMultiDelete}
+                setDeleteContactId={setDeleteContactId}
               />
             </div>
             <div className='col-lg-5'>
@@ -147,6 +187,11 @@ const ContactMain = () => {
               title={isEdit ? 'Edit Contact' : 'Add Contact'}
               addContact={addContact}
               editContact={editContact}
+            />
+            <DeleteModel
+              show={show}
+              handleClose={handleClose}
+              handleDelete={handleDelete}
             />
           </div>
         </div>
