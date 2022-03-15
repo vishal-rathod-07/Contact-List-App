@@ -11,7 +11,7 @@ function ContactModel({
   addContact,
   editContact,
 }) {
-  const [contact, setContact] = useState({
+  const initialContact = {
     id: '_' + Math.random().toString(36).substr(2, 9),
     fname: '',
     lname: '',
@@ -20,21 +20,13 @@ function ContactModel({
     company: '',
     Role: '',
     address: '',
-  });
+  };
+  const [contact, setContact] = useState(initialContact);
 
   useEffect(() => {
-    isEdit
-      ? setContact(activeContact)
-      : setContact({
-          id: '_' + Math.random().toString(36).substr(2, 9),
-          fname: '',
-          lname: '',
-          email: '',
-          phone: '',
-          company: '',
-          Role: '',
-          address: '',
-        });
+    isEdit ? setContact(activeContact) : setContact(initialContact);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeContact, isEdit]);
 
   const [validated, setValidated] = useState(false);
@@ -47,16 +39,7 @@ function ContactModel({
       setValidated(true);
     } else {
       isEdit ? editContact(contact) : addContact(contact);
-      setContact({
-        id: '_' + Math.random().toString(36).substr(2, 9),
-        fname: '',
-        lname: '',
-        email: '',
-        phone: '',
-        company: '',
-        Role: '',
-        address: '',
-      });
+      setContact(initialContact);
       onHide(false);
       setValidated(false);
     }
