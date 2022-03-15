@@ -16,7 +16,7 @@ const ContactMain = () => {
       ? JSON.parse(localStorage.getItem('contacts'))
       : [
           {
-            id: Date.now(),
+            id: '_' + Math.random().toString(36).substr(2, 9),
             fname: 'Mike',
             lname: 'Huston',
             email: 'mikehuston@live.com',
@@ -35,11 +35,14 @@ const ContactMain = () => {
   const [filterText, setFilterText] = useState('');
 
   const [activeContact, setActiveContact] = useState(null);
+
   const [isActive, setIsActive] = useState(false);
 
   const [modalShow, setModalShow] = useState(false);
 
   const [isEdit, setIsEdit] = useState(false);
+
+  const [checkedContactIdList, setCheckedContactIDList] = useState([]);
 
   const addContact = (contact) => {
     setContacts([...contacts, contact]);
@@ -48,7 +51,10 @@ const ContactMain = () => {
   const deleteContact = (id) => {
     const newContacts = contacts.filter((contact) => contact.id !== id);
     setContacts(newContacts);
-    setIsActive(false);
+    if (activeContact && activeContact.id === id) {
+      setActiveContact(null);
+      setIsActive(false);
+    }
   };
 
   const editContact = (contact) => {
@@ -65,16 +71,27 @@ const ContactMain = () => {
     setIsActive(true);
   };
 
+  const deleteCheckedContacts = (checkedContactIdList) => {
+    const newContacts = contacts.filter((contact) =>
+      checkedContactIdList.includes(contact.id) ? false : true
+    );
+    setContacts(newContacts);
+    setCheckedContactIDList([]);
+    checkedContactIdList.forEach((id) => {
+      if (activeContact && activeContact.id === id) {
+        setActiveContact(null);
+        setIsActive(false);
+      }
+    });
+  };
+
   return (
     <div className='main-content container-fluid'>
       <div className='row'>
         <div className='main-content-top col-xl-12'></div>
       </div>
       <div className='row'>
-        <div
-          className='main-content-bottom container-fluid mt-5'
-          style={{ width: '93%', height: '100%' }}
-        >
+        <div className='main-content-bottom container-fluid p-lg-5 p-3'>
           <div className='row'>
             <div className='col-xl-12 d-flex'>
               <img src={Logo} alt='logo' className='logo' />
@@ -84,7 +101,7 @@ const ContactMain = () => {
               </div>
             </div>
           </div>
-          <div className='row mt-4 mb-4'>
+          <div className='row mb-4 p-lg-5 pb-lg-0 pt-lg-0'>
             <div className='col-xl-3 col-md-6'>
               <SearchBar
                 filterText={filterText}
@@ -101,13 +118,16 @@ const ContactMain = () => {
               />
             </div>
           </div>
-          <div className='row mt-0'>
+          <div className='row p-lg-5 pb-lg-0 pt-lg-0'>
             <div className='col-lg-7 '>
               <ContactTable
                 contacts={contacts}
                 deleteContact={deleteContact}
                 filterText={filterText}
                 showActiveUser={showActiveUser}
+                deleteCheckedContacts={deleteCheckedContacts}
+                checkedContactIdList={checkedContactIdList}
+                setCheckedContactIDList={setCheckedContactIDList}
               />
             </div>
             <div className='col-lg-5'>
