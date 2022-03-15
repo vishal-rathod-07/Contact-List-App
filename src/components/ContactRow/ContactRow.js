@@ -5,15 +5,18 @@ import './contactrow.scss';
 
 const ContactRow = ({
   contact,
-  deleteContact,
   showActiveUser,
   checkedContactIdList,
   setCheckedContactIDList,
+  handleShow,
+  setIsMultiDelete,
+  setDeleteContactId,
 }) => {
   return (
     <tr key={contact.id}>
       <td className='align-middle text-center'>
         <input
+          title='Select Contact'
           type='checkbox'
           onChange={() => {
             if (checkedContactIdList.includes(contact.id)) {
@@ -53,11 +56,19 @@ const ContactRow = ({
           <p className='m-0'>{contact.company}</p>
         </div>
       </td>
-      <td
-        onClick={() => deleteContact(contact.id)}
-        className='align-middle text-center'
-      >
-        <TrashIcon className='trash-icon' />
+      <td className='align-middle text-center' title='Delete Contact'>
+        {checkedContactIdList.length > 0 ? (
+          ''
+        ) : (
+          <TrashIcon
+            className='trash-icon'
+            onClick={() => {
+              handleShow();
+              setIsMultiDelete(false);
+              setDeleteContactId(contact.id);
+            }}
+          />
+        )}
       </td>
     </tr>
   );
