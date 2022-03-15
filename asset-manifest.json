@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Contact-List-App/static/css/main.53b11e10.css",
-    "main.js": "/Contact-List-App/static/js/main.a4a5d96e.js",
+    "main.css": "/Contact-List-App/static/css/main.96e5a222.css",
+    "main.js": "/Contact-List-App/static/js/main.de028b10.js",
     "static/js/787.ce7ac628.chunk.js": "/Contact-List-App/static/js/787.ce7ac628.chunk.js",
     "static/media/contact-list.png": "/Contact-List-App/static/media/contact-list.ac93c391bfcfc9178b23.png",
     "index.html": "/Contact-List-App/index.html",
-    "main.53b11e10.css.map": "/Contact-List-App/static/css/main.53b11e10.css.map",
-    "main.a4a5d96e.js.map": "/Contact-List-App/static/js/main.a4a5d96e.js.map",
+    "main.96e5a222.css.map": "/Contact-List-App/static/css/main.96e5a222.css.map",
+    "main.de028b10.js.map": "/Contact-List-App/static/js/main.de028b10.js.map",
     "787.ce7ac628.chunk.js.map": "/Contact-List-App/static/js/787.ce7ac628.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.53b11e10.css",
-    "static/js/main.a4a5d96e.js"
+    "static/css/main.96e5a222.css",
+    "static/js/main.de028b10.js"
   ]
 }
