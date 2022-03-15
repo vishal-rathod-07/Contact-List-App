@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-// import ContactModel from "../ContactModel/ContactModel";
 import { PencilIcon } from '@heroicons/react/outline';
 import { PlusIcon } from '@heroicons/react/outline';
 
@@ -10,12 +9,9 @@ const ContactButton = ({
   btnIcon,
   btnText,
   setIsEdit,
-  isEdit,
   btnType,
   setModalShow,
 }) => {
-  //   const [modalShow, setModalShow] = React.useState(false);
-
   return (
     <>
       <Button
@@ -24,7 +20,6 @@ const ContactButton = ({
           setModalShow(true);
           btnType === 'add' ? setIsEdit(false) : setIsEdit(true);
         }}
-        // onClick={setIsEdit(isEdit)}
         className='contact-btn'
       >
         {btnIcon === 'pencil' ? (
@@ -34,12 +29,6 @@ const ContactButton = ({
         ) : null}
         {btnText}
       </Button>
-
-      {/* <ContactModel
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-        title={isEdit ? "Edit Contact" : "Add Contact"}
-      /> */}
     </>
   );
 };
