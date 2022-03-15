@@ -11,6 +11,7 @@ const SearchBar = ({ filterText, setFilterText }) => {
     <div className='main-content-search'>
       <div className='search-btn d-flex justify-content-between align-items-center'>
         <input
+          title='Search'
           className='search-input'
           type='text'
           placeholder='Search contacts'
