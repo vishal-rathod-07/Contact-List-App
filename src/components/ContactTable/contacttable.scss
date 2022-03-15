@@ -1,5 +1,9 @@
 .main-content-list {
   overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 tbody {
