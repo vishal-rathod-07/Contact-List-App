@@ -7,30 +7,22 @@ import './contacttable.scss';
 const ContactTable = ({
   contacts,
   filterText,
-  deleteContact,
   showActiveUser,
-  deleteCheckedContacts,
   checkedContactIdList,
   setCheckedContactIDList,
+  handleShow,
+  setIsMultiDelete,
+  setDeleteContactId,
 }) => {
   return (
     <div className='main-content-list'>
       <Table>
         <thead>
           <tr>
-            <th className='text-center'>+</th>
-            <th className='text-secondary'>Basic Info</th>
-            <th className='text-secondary'>Company</th>
-            <th className='text-center p-1'>
-              {checkedContactIdList.length > 0 ? (
-                <TrashIcon
-                  className='trash-icon'
-                  onClick={() => deleteCheckedContacts(checkedContactIdList)}
-                />
-              ) : (
-                ''
-              )}
-            </th>
+            <th className='text-center col-1'>+</th>
+            <th className='text-secondary col-5'>Basic Info</th>
+            <th className='text-secondary col-5'>Company</th>
+            <th className='text-center p-1 col-1'></th>
           </tr>
         </thead>
         <tbody>
@@ -60,14 +52,16 @@ const ContactTable = ({
                     .includes(filterText.toLowerCase()) ||
                   contact.Role.toLowerCase().includes(filterText.toLowerCase())
               )
-              .map((contact) => (
+              .map((contact, index) => (
                 <ContactRow
-                  key={contact.id}
+                  key={index}
                   contact={contact}
-                  deleteContact={deleteContact}
                   showActiveUser={showActiveUser}
                   checkedContactIdList={checkedContactIdList}
                   setCheckedContactIDList={setCheckedContactIDList}
+                  handleShow={handleShow}
+                  setIsMultiDelete={setIsMultiDelete}
+                  setDeleteContactId={setDeleteContactId}
                 />
               ))
           ) : (
