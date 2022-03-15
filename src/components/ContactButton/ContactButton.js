@@ -15,12 +15,13 @@ const ContactButton = ({
   return (
     <>
       <Button
+        title={btnType === 'add' ? 'Add Contact' : 'Edit Contact'}
         variant='default'
         onClick={() => {
           setModalShow(true);
           btnType === 'add' ? setIsEdit(false) : setIsEdit(true);
         }}
-        className='contact-btn'
+        className='custom-btn'
       >
         {btnIcon === 'pencil' ? (
           <PencilIcon className='edit-icon align-middle' />
