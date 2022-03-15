@@ -34,12 +34,7 @@ const ContactInfo = (props) => {
 
   return (
     <div className='main-content-card'>
-      <div
-        className='container p-0'
-        style={{
-          width: '100%',
-        }}
-      >
+      <div className='container p-0'>
         <div className='row'>
           <div className='col-md-12'>
             <div className='card mb-3'>
