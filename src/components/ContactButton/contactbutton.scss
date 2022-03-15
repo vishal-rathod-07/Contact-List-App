@@ -1,7 +1,8 @@
-.contact-btn {
+.custom-btn {
   background: linear-gradient(45deg, #ff8767, #fe67a3);
   box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
   color: white;
+  border: none;
 
   @media screen and (max-width: 767px) {
     width: 100%;
