@@ -179,20 +179,24 @@ const ContactMain = () => {
                 />
               )}
             </div>
-            <ContactModel
-              activeContact={activeContact}
-              isEdit={isEdit}
-              show={modalShow}
-              onHide={() => setModalShow(false)}
-              title={isEdit ? 'Edit Contact' : 'Add Contact'}
-              addContact={addContact}
-              editContact={editContact}
-            />
-            <DeleteModel
-              show={show}
-              handleClose={handleClose}
-              handleDelete={handleDelete}
-            />
+            {modalShow && (
+              <ContactModel
+                activeContact={activeContact}
+                isEdit={isEdit}
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+                title={isEdit ? 'Edit Contact' : 'Add Contact'}
+                addContact={addContact}
+                editContact={editContact}
+              />
+            )}
+            {show && (
+              <DeleteModel
+                show={show}
+                handleClose={handleClose}
+                handleDelete={handleDelete}
+              />
+            )}
           </div>
         </div>
       </div>
