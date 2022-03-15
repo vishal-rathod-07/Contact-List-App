@@ -12,7 +12,7 @@ function ContactModel({
   editContact,
 }) {
   const [contact, setContact] = useState({
-    id: Date.now(),
+    id: '_' + Math.random().toString(36).substr(2, 9),
     fname: '',
     lname: '',
     email: '',
@@ -26,7 +26,7 @@ function ContactModel({
     isEdit
       ? setContact(activeContact)
       : setContact({
-          id: Date.now(),
+          id: '_' + Math.random().toString(36).substr(2, 9),
           fname: '',
           lname: '',
           email: '',
@@ -48,6 +48,7 @@ function ContactModel({
     } else {
       isEdit ? editContact(contact) : addContact(contact);
       setContact({
+        id: '_' + Math.random().toString(36).substr(2, 9),
         fname: '',
         lname: '',
         email: '',
