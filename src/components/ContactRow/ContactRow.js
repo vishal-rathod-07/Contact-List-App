@@ -18,6 +18,7 @@ const ContactRow = ({
         <input
           title='Select Contact'
           type='checkbox'
+          checked={checkedContactIdList.includes(contact.id)}
           onChange={() => {
             if (checkedContactIdList.includes(contact.id)) {
               setCheckedContactIDList(
@@ -57,18 +58,14 @@ const ContactRow = ({
         </div>
       </td>
       <td className='align-middle text-center' title='Delete Contact'>
-        {checkedContactIdList.length > 0 ? (
-          ''
-        ) : (
-          <TrashIcon
-            className='trash-icon'
-            onClick={() => {
-              handleShow();
-              setIsMultiDelete(false);
-              setDeleteContactId(contact.id);
-            }}
-          />
-        )}
+        <TrashIcon
+          className='trash-icon'
+          onClick={() => {
+            handleShow();
+            setIsMultiDelete(false);
+            setDeleteContactId(contact.id);
+          }}
+        />
       </td>
     </tr>
   );
