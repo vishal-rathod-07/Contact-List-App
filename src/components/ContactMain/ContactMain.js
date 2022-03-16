@@ -48,10 +48,13 @@ const ContactMain = () => {
   const [checkedContactIdList, setCheckedContactIDList] = useState([]);
 
   const [isMultiDelete, setIsMultiDelete] = useState(false);
+
   const [deleteContactId, setDeleteContactId] = useState(null);
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
+
   const handleShow = () => setShow(true);
 
   const handleDelete = () => {
