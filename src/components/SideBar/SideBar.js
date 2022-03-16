@@ -18,37 +18,37 @@ const SideBar = () => {
         </div>
         <ul className='nav flex-column mb-auto text-center mt-5'>
           <li>
-            <a href='./' className='nav-link py-3  '>
+            <a href='./' className='nav-link py-3 px-1  '>
               <HomeIcon className=' sidebar__icon' />
             </a>
           </li>
           <li>
-            <a href='./' className='nav-link active py-3  '>
+            <a href='./' className='nav-link active py-3 px-1  '>
               <UserIcon className='sidebar__icon' />
             </a>
           </li>
           <li>
-            <a href='./' className='nav-link py-3  '>
+            <a href='./' className='nav-link py-3 px-1  '>
               <ClipboardListIcon className=' sidebar__icon' />
             </a>
           </li>
           <li>
-            <a href='./' className='nav-link py-3  '>
+            <a href='./' className='nav-link py-3 px-1  '>
               <ChartPieIcon className=' sidebar__icon' />
             </a>
           </li>
           <li>
-            <a href='./' className='nav-link py-3  '>
+            <a href='./' className='nav-link py-3 px-1  '>
               <DatabaseIcon className=' sidebar__icon' />
             </a>
           </li>
           <li>
-            <a href='./' className='nav-link py-3  '>
+            <a href='./' className='nav-link py-3 px-1  '>
               <CalendarIcon className=' sidebar__icon' />
             </a>
           </li>
           <li>
-            <a href='./' className='nav-link py-3  '>
+            <a href='./' className='nav-link py-3 px-1  '>
               <CogIcon className=' sidebar__icon' />
             </a>
           </li>
