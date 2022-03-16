@@ -90,7 +90,6 @@ const ContactInfo = (props) => {
                 <hr />
                 <div className='row'>
                   <div className='col-12 d-flex justify-content-center'>
-                    {/* <EditContact /> */}
                     <ContactButton
                       btnIcon={'pencil'}
                       btnText={'Edit Contact'}
@@ -102,9 +101,6 @@ const ContactInfo = (props) => {
               </div>
             </div>
           </div>
-
-          <div className='row'></div>
-          <div className='row'></div>
         </div>
       </div>
     </div>
