@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import { Form, Row, Col, InputGroup, Button } from 'react-bootstrap';
+import './contactmodel.scss';
 
 function ContactModel({
   activeContact,
@@ -50,6 +51,7 @@ function ContactModel({
       show={show}
       onHide={onHide}
       size='lg'
+      backdrop='static'
       aria-labelledby='contained-modal-title-vcenter'
       centered
     >
@@ -71,7 +73,6 @@ function ContactModel({
                 }
                 required
               />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               <Form.Control.Feedback type='invalid'>
                 Please enter a valid first name.
               </Form.Control.Feedback>
@@ -88,7 +89,6 @@ function ContactModel({
                 }
                 required
               />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               <Form.Control.Feedback type='invalid'>
                 Please enter a valid last name.
               </Form.Control.Feedback>
@@ -109,7 +109,6 @@ function ContactModel({
                   }
                   required
                 />
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 <Form.Control.Feedback type='invalid'>
                   Please provide a valid email.
                 </Form.Control.Feedback>
@@ -127,7 +126,6 @@ function ContactModel({
                 }
                 required
               />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               <Form.Control.Feedback type='invalid'>
                 Please provide a valid phone number.
               </Form.Control.Feedback>
@@ -146,7 +144,6 @@ function ContactModel({
                 }
                 required
               />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               <Form.Control.Feedback type='invalid'>
                 Please enter a valid compane name.
               </Form.Control.Feedback>
@@ -181,7 +178,6 @@ function ContactModel({
                 <option value='Project Manager'>Project Manager</option>
                 <option value='Finance Manager'>Finance Manager</option>
               </Form.Select>
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               <Form.Control.Feedback type='invalid'>
                 Please select a valid role.
               </Form.Control.Feedback>
@@ -200,7 +196,6 @@ function ContactModel({
                 }
                 required
               />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               <Form.Control.Feedback type='invalid'>
                 Please provide a valid address.
               </Form.Control.Feedback>
@@ -210,7 +205,7 @@ function ContactModel({
             <Button variant='secondary' onClick={onHide}>
               Close
             </Button>
-            <Button type='submit'>Submit form</Button>
+            <Button type='submit'>Save Contact</Button>
           </Modal.Footer>
         </Form>
       </Modal.Body>
