@@ -11,6 +11,7 @@ import Logo from '../../contact-list.png';
 
 import './contactmain.scss';
 import { Button } from 'react-bootstrap';
+import { TrashIcon } from '@heroicons/react/outline';
 
 const ContactMain = () => {
   const [contacts, setContacts] = useState(
@@ -150,6 +151,7 @@ const ContactMain = () => {
                     setIsMultiDelete(true);
                   }}
                 >
+                  <TrashIcon className='custom-btn-icon' />
                   Delete
                 </Button>
               ) : (
