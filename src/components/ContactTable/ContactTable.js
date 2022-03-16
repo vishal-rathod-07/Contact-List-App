@@ -1,4 +1,3 @@
-import { TrashIcon } from '@heroicons/react/outline';
 import { Table } from 'react-bootstrap';
 import ContactRow from '../ContactRow/ContactRow';
 
