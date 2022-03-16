@@ -8,6 +8,7 @@ const DeleteModel = ({ show, handleClose, handleDelete }) => {
         show={show}
         onHide={handleClose}
         size='md'
+        backdrop='static'
         aria-labelledby='contained-modal-title-vcenter'
         centered
       >
