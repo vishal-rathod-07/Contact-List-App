@@ -24,9 +24,9 @@ const ContactButton = ({
         className='custom-btn'
       >
         {btnIcon === 'pencil' ? (
-          <PencilIcon className='edit-icon align-middle' />
+          <PencilIcon className='custom-btn-icon align-middle' />
         ) : btnIcon === 'plus' ? (
-          <PlusIcon className='edit-icon align-middle' />
+          <PlusIcon className='custom-btn-icon align-middle' />
         ) : null}
         {btnText}
       </Button>
