@@ -89,7 +89,7 @@ const ContactInfo = (props) => {
                 </div>
                 <hr />
                 <div className='row'>
-                  <div className='col-12 text-center'>
+                  <div className='col-12 d-flex justify-content-center'>
                     {/* <EditContact /> */}
                     <ContactButton
                       btnIcon={'pencil'}
