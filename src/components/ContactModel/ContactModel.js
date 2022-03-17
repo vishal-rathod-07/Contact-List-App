@@ -203,9 +203,9 @@ function ContactModel({
           </Row>
           <Modal.Footer>
             <Button variant='secondary' onClick={onHide}>
-              Close
+              Cancel
             </Button>
-            <Button type='submit'>Save Contact</Button>
+            <Button type='submit'>Save</Button>
           </Modal.Footer>
         </Form>
       </Modal.Body>
