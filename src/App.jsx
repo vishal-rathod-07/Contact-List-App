@@ -1,5 +1,5 @@
-import ContactMain from './components/ContactMain/ContactMain.js';
-import SideBar from './components/SideBar/SideBar.js';
+import ContactMain from './components/ContactMain/ContactMain';
+import SideBar from './components/SideBar/SideBar';
 
 import './App.scss';
 
