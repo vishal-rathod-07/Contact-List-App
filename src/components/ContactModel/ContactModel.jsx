@@ -68,6 +68,7 @@ function ContactModel({
                 pattern='^\S[A-Za-z\s]{1,32}\S$'
                 placeholder='Enter First Name'
                 value={contact.fname}
+                maxLength='10'
                 onChange={(e) =>
                   setContact({ ...contact, fname: e.target.value })
                 }
@@ -84,6 +85,7 @@ function ContactModel({
                 pattern='^\S[A-Za-z\s]{1,32}\S$'
                 placeholder='Enter last name'
                 value={contact.lname}
+                maxLength='10'
                 onChange={(e) =>
                   setContact({ ...contact, lname: e.target.value })
                 }
