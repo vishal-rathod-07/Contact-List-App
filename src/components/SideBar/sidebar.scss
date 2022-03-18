@@ -23,10 +23,10 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  color: #fff;
+  color: #fff !important;
 
   &:focus {
-    color: #fff;
+    color: #fff !important;
   }
 }
 
