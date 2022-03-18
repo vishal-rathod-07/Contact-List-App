@@ -7,7 +7,7 @@ import ContactButton from '../ContactButton/ContactButton';
 import ContactModel from '../ContactModel/ContactModel';
 import DeleteModel from '../DeleteModel/DeleteModel';
 
-import Logo from '../../contact-list.png';
+import Logo from '../../assets/contact-list.png';
 
 import './contactmain.scss';
 import { Button } from 'react-bootstrap';
