@@ -45,7 +45,9 @@ const ContactInfo = (props) => {
                     className={'info-avatar'}
                   />
                   <div className='mt-3'>
-                    <h4>{contact.fname + ' ' + contact.lname}</h4>
+                    <h4 className='truncate-string'>
+                      {contact.fname + ' ' + contact.lname}
+                    </h4>
                     <p className='mb-1 text-secondary'>
                       {contact.Role} @ {contact.company}
                     </p>
@@ -55,7 +57,7 @@ const ContactInfo = (props) => {
                   <div className='col-4'>
                     <h6 className=' mb-0 text-secondary'>Full Name</h6>
                   </div>
-                  <div className='col-8  '>
+                  <div className='col-8 truncate-string'>
                     {contact.fname} {contact.lname}
                   </div>
                 </div>
