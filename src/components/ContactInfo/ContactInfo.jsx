@@ -44,8 +44,8 @@ const ContactInfo = (props) => {
                     name={contact.fname + ' ' + contact.lname}
                     className={'info-avatar'}
                   />
-                  <div className='mt-3'>
-                    <h4 className='truncate-string'>
+                  <div className='mt-3 w-100'>
+                    <h4 className='m-auto fullname'>
                       {contact.fname + ' ' + contact.lname}
                     </h4>
                     <p className='mb-1 text-secondary'>

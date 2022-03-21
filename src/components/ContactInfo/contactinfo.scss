@@ -25,3 +25,9 @@ hr {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.fullname {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
