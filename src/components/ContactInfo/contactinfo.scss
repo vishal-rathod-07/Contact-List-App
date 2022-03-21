@@ -18,3 +18,10 @@
 hr {
   background-color: #c1c1c1 !important;
 }
+
+.truncate-string {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
